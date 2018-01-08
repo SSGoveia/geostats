@@ -1,27 +1,24 @@
-title: Geostats
+title: R4Geo
 description: Desenvolvimento de Scripts e Webapps com o R
-show_downloads: true
+show_downloads: false
 
-baseurl: "/geostats-blog" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
+baseurl: "/geostats" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
 url: "https://geosaber.github.io" # change this to the base hostname & protocol for your site
 
 google_analytics:
 # cayman-blog date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-cayman-blog:
+geostats:
   date_format: "%b %-d, %Y"
 
 theme: # leave it empty
 
 # social
-author: "Lore Pirri"
+author: "Sidney Goveia"
 image: /thumbnail-jumbo.png
-twitter:
-  username: lorepirri
+
 #  site:
 facebook:
-  #publisher: 1592372034171500
-  #profile_id: 1809805629
-  app_id: 1798910940422432 # cayman-blog
-  #authors: lorepirri
+  profile_id: 509351975782055
+  
 #  admins:
