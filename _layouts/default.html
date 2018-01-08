@@ -96,46 +96,11 @@
         <!-- Twitter icon -->
         <span class="my-span-icon">
           <a href="https://facebook.com/{{ site.fecebook.username }}" aria-label="{{ site.github.owner_name }}'s Facebook" title="{{ site.github.owner_name }}'s Facebook">
-            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>
+            <svg class="my-svg-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M128,3C59,3,3,59,3,128s56,125,125,125s125-56,125-125S197,3,128,3z M158.7,139h-21.1l0.1,68H107v-68H86.9l1.2-30H107V88
+	c0,0-1.7-29,29.7-29c14.5,0,24.3,0,24.3,0v26h-15.8c0,0-7.2-0.5-7.2,5.5V109h27.2L158.7,139z"/></svg>
           </a>
         </span>
         
-        <!-- Inserção -->
-        <div class="social-section-elements">
-              <!----><a class="social-section-element so-global-footer-icon footer-view-f" ng-class="'footer-view-' + socialElement.name[0]" ng-click="socialShare(socialElement, $event)" ng-href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshoutout.wix.com%2Fso%2FaM3MIyFJ" ng-repeat="socialElement in data.socialButtons.buttons" ng-show="socialElement.active" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fshoutout.wix.com%2Fso%2FaM3MIyFJ">
-                <!----><span so-experiment-if="specs.so.lp.SSM">
-                  <!----><ng-include src="getSocialIconUrl(socialElement)"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
-<path d="M128,3C59,3,3,59,3,128s56,125,125,125s125-56,125-125S197,3,128,3z M158.7,139h-21.1l0.1,68H107v-68H86.9l1.2-30H107V88
-	c0,0-1.7-29,29.7-29c14.5,0,24.3,0,24.3,0v26h-15.8c0,0-7.2-0.5-7.2,5.5V109h27.2L158.7,139z"></path>
-</svg>
-</ng-include>
-                </span><!---->
-              </a><!----><a class="social-section-element so-global-footer-icon footer-view-t" ng-class="'footer-view-' + socialElement.name[0]" ng-click="socialShare(socialElement, $event)" ng-href="https://twitter.com/share?url=https%3A%2F%2Fshoutout.wix.com%2Fso%2FaM3MIyFJ" ng-repeat="socialElement in data.socialButtons.buttons" ng-show="socialElement.active" target="_blank" href="https://twitter.com/share?url=https%3A%2F%2Fshoutout.wix.com%2Fso%2FaM3MIyFJ">
-                <!----><span so-experiment-if="specs.so.lp.SSM">
-                  <!----><ng-include src="getSocialIconUrl(socialElement)"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
-<path d="M128,3C59,3,3,59,3,128s56,125,125,125s125-56,125-125S197.1,3,128,3z M191.6,100.3l0.1,4.2c0,42.5-30.2,91.4-85.5,91.4
-	c-16.9,0-32.7-5.3-46-14.4c2.4,0.3,4.7,0.4,7.2,0.4c14.1,0,27-5.2,37.3-13.8c-13.2-0.2-24.3-9.6-28.1-22.3c1.8,0.4,3.7,0.6,5.7,0.6
-	c2.7,0,4.5-0.4,7.1-1.1c-13.8-3-25-16-25-31.5v-0.4c4,2.4,9.6,3.9,14.5,4.1c-8-5.8-13-15.6-13-26.8c0-5.9,1.7-11.4,4.3-16.1
-	c14.8,19.4,37.1,32.2,62.1,33.5c-0.5-2.4-0.7-4.8-0.7-7.3c0-17.8,13.5-32.2,30-32.2c8.7,0,16.5,3.9,22,10.2c6.8-1.5,13.2-4.1,19-7.8
-	c-2.2,7.5-7,13.8-13.2,17.8c6-0.8,11.8-2.5,17.3-5C202.5,90.1,197.4,95.8,191.6,100.3z"></path>
-</svg>
-</ng-include>
-                </span><!---->
-              </a><!----><a class="social-section-element so-global-footer-icon ng-hide footer-view-p" ng-class="'footer-view-' + socialElement.name[0]" ng-click="socialShare(socialElement, $event)" ng-href="//pinterest.com/pin/create/button/?url=https%3A%2F%2Fshoutout.wix.com%2Fso%2FaM3MIyFJ&amp;media=http%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F2d2564_60b93826c49c42e9aad5d3292e699d58~mv2.jpg&amp;description=SEU%20OBJETIVO%20PARA%202018%20%C3%89%20ECONOMIZAR%3F" ng-repeat="socialElement in data.socialButtons.buttons" ng-show="socialElement.active" target="_blank" href="//pinterest.com/pin/create/button/?url=https%3A%2F%2Fshoutout.wix.com%2Fso%2FaM3MIyFJ&amp;media=http%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F2d2564_60b93826c49c42e9aad5d3292e699d58~mv2.jpg&amp;description=SEU%20OBJETIVO%20PARA%202018%20%C3%89%20ECONOMIZAR%3F">
-                <!----><span so-experiment-if="specs.so.lp.SSM">
-                  <!----><ng-include src="getSocialIconUrl(socialElement)"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
-<path d="M128,3C59,3,3,59,3,128s56,125,125,125s125-56,125-125S197.1,3,128,3z M142.3,170.5c-11.4,0-22.2-6.4-25.9-13.7
-	c0,0-6.1,25.2-7.5,30.1c-4.6,17.2-18.1,34.4-19.1,35.8c-0.7,0.9-2.3,0.6-2.5-0.6c-0.2-2.2-3.7-23.9,0.3-41.6l13.7-59.7
-	c0,0-3.3-7-3.3-17.3c0-16.3,9.1-28.4,20.4-28.4c9.7,0,14.3,7.5,14.3,16.4c0,10-6.2,25-9.4,38.9c-2.6,11.6,5.6,21.1,16.8,21.1
-	c20.1,0,33.6-26.7,33.6-58.2c0-24.1-15.7-42-44.1-42c-32.2,0-52.3,24.8-52.3,52.5c0,9.5,2.8,16.2,7.1,21.5c1.9,2.4,2.2,3.3,1.5,6.1
-	l-2.2,8.7c-0.6,2.8-2.9,3.8-5.2,2.8c-14.9-6.3-21.8-23-21.8-41.9c0-31.1,25.4-68.4,75.8-68.4c40.5,0,67.2,30.3,67.2,62.8
-	C199.6,138.4,176.4,170.5,142.3,170.5z"></path>
-</svg>
-</ng-include>
-                </span><!---->
-              </a><!---->
-            </div>
-
         <!-- RSS icon -->
         {% if site.gems contains "jekyll-feed" %}
           <span class="my-span-icon">
