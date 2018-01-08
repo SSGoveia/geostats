@@ -1,13 +1,12 @@
 ---
 layout: page
-title: About
-tagline: A few more words about this theme
+title: Sobre
+tagline: Saiba mais
 permalink: /about.html
 ---
 
-This is the _Cayman Blog_ Jekyll theme. You can find out more info about customizing this theme, as well as basic usage documentation, and source code at: [cayman-blog](https://github.com/lorepirri/cayman-blog)
+Este é nosso site de Aplicações R. Você pode encontrar mais informações sobre nosso trabahlo em: [Geosaber](http://www.geosaber.com.br)
 
-You can find the source code for _Jekyll_ at [jekyll](https://github.com/jekyll/jekyll)
+Você pode conhecer mais sobre nossas Aplicações Web com R em [Geostats](https://geosaber.github.io/geostats)
 
-
-[Go to the Home Page]({{ site.url }}{{ site.baseurl }})
+[Ir Para a Página Inicial]({{ site.url }}{{ site.baseurl }})
