@@ -1,0 +1,212 @@
+<div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top" role="navigation">
+	<div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
+        <div class="navbar-header">
+            {% if MENUITEMS or (pages and DISPLAY_PAGES_ON_MENU) or (categories and DISPLAY_CATEGORIES_ON_MENU) %}
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {% endif %}
+
+
+            <a href="{{ SITEURL }}/" class="navbar-brand">
+                {% if SITELOGO %}<img class="img-responsive pull-left gap-right" src="{{ SITEURLABS }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}"/> {% endif %}
+                {% if not HIDE_SITENAME %}{{ SITENAME }}{% endif %}
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                {% for title, link in MENUITEMS %}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                {% endfor %}
+                {% if not PAGES_SORT_ATTRIBUTE -%}
+                    {% set PAGES_SORT_ATTRIBUTE = 'title' %}
+                {%- endif %}
+
+
+
+
+    {% for p in pages | sort(attribute=PAGES_SORT_ATTRIBUTE) %}
+        <li class="active">
+
+        <!-- se il metadato unique è = a corsi, allora fai dropdown -->
+
+        {% if p.dropdown %}
+
+        {% if p.dropdown == 'yes' %}
+
+        <li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+					{{ p.menulabel|default(p.title) }}
+				<b class="caret"></b></a>
+
+          <!-- link relativi a pagine specifiche -->
+
+            <ul class="dropdown-menu">
+              <li>
+								<a href="{{ SITEURL }}/pages/cartography.html">
+									<i class="fa fa-map"></i>
+									{{ _('Cartography') }}</a>
+							</li>
+              <li>
+								<a href="{{ SITEURL }}/pages/data-analysis.html">
+									<i class="fa fa-bar-chart"></i>
+									{{ _('Data Analysis') }}</a>
+							</li>
+              <li>
+								<a href="{{ SITEURL }}/pages/training.html">
+									<i class="fa fa-graduation-cap"></i>
+									{{ _('Training') }}</a>
+							</li>
+            </ul>
+        </li>
+
+        {% elif p.dropdown == 'blog'%}
+
+				<li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+					{{ p.menulabel|default(p.title) }}
+				<b class="caret"></b></a>
+
+          <!-- link relativi a pagine specifiche -->
+
+            <ul class="dropdown-menu">
+              <li>
+								<a href="{{ SITEURL }}/pages/blog.html">
+									<i class="fa fa-newspaper-o"></i>
+									{{ _('Blog Posts')}}
+								</a></li>
+              <li>
+								<a href="{{ SITEURL }}/tags.html">
+									<i class="fa fa-tags fa-lg"></i>{{ _('Tags')}}
+								</a></li>
+              <li>
+								<a href="{{ SITEURL }}/archives.html">
+									<i class="fa fa-th-list"></i>
+									{{ _('Post Archives')}}</a></li>
+            </ul>
+        </li>
+
+
+				{% elif p.dropdown == 'about'%}
+
+				<li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+					{{ p.menulabel|default(p.title) }}
+				<b class="caret"></b></a>
+
+          <!-- link relativi a pagine specifiche -->
+
+            <ul class="dropdown-menu">
+              <li><a href="{{ SITEURL }}/pages/about.html">
+								<i class="fa fa-user-circle"></i>
+								{{ _('About Me')}}</a></li>
+              <li><a href="{{ SITEURL }}/pages/cv.html">
+								<i class="fa fa-id-card-o"></i>
+								{{ _('CV')}}</a></li>
+            </ul>
+        </li>
+
+
+        {% endif%}
+
+        <!-- se invece il metdadato non è corsi, vai con il resto -->
+
+        {% elif p.url %}
+         <li{% if p == page %} class="active"{% endif %}>
+          <a href="{{ SITEURL }}/{{ p.url }}">
+             {{ p.menulabel|default(p.title) }}
+          </a>
+        </li>
+
+
+        {% endif %}
+      {% endfor %}
+
+
+
+      {% if DISPLAY_CATEGORIES_ON_MENU %}
+          {% for cat, null in categories %}
+              <li {% if cat == category %}class="active"{% endif %}>
+                  <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
+              </li>
+          {% endfor %}
+      {% endif %}
+  </ul>
+
+
+<!-- language options -->
+
+  <ul class="nav navbar-nav navbar-right">
+
+    {% for lang, url in lang_siteurls.items() %}
+
+    <li{% if lang == DEFAULT_LANG %} class="active"{% endif %}>
+
+    <a href={% if article and not article.translations and lang != DEFAULT_LANG %}
+    "{{ SITEURL }}/{{ article.url }}"
+
+    <a href={% elif article and article.translations and lang != DEFAULT_LANG %}
+    "{{ SITEURL }}/{{ article | extract_trans(lang, url) }}"
+
+
+    {% elif page and lang != DEFAULT_LANG %}
+    "{{ SITEURL }}/{{ page | extract_trans(lang, url) }}"
+
+    {% elif page %}
+    "{{ SITEURL }}/{{ page.url }}"
+
+
+    {% else %}
+			{% if page_name == 'index' and lang != DEFAULT_LANG %}
+			"{{ SITEURLABS }}/{{ lang }}"
+
+			{% elif page_name == 'index' %}
+			"{{ SITEURL }}"
+
+
+			{% elif page_name == 'categories' and lang != DEFAULT_LANG %}
+			"{{ SITEURLABS }}/{{ lang }}/categories.html"
+
+			{% elif page_name == 'categories' %}
+			"{{ SITEURLABS }}/"
+
+			{% elif page_name == 'tags' and lang != DEFAULT_LANG %}
+			"{{ SITEURLABS }}/{{ lang }}/tags.html"
+
+			{% elif page_name == 'tags' %}
+			"{{ SITEURLABS }}/"
+
+			{% elif page_name == 'archives' and lang != DEFAULT_LANG %}
+			"{{ SITEURLABS }}/{{ lang }}/archives.html"
+
+			{% elif page_name == 'archives' %}
+			"{{ SITEURLABS }}/"
+
+
+			{% else%}
+			"{{ output_file }}"
+
+			{% endif %}
+
+    {% endif %}>{{ lang | lookup_lang_name }}</a>
+    </li>
+
+  {% endfor %}
+
+
+  {% if 'tipue_search' in PLUGINS %}
+    <li><span>
+      <form class="navbar-search" action="{{ SEARCH_URL | default('/search.html') }}">
+        <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+      </form></span>
+    </li>
+  {% endif %}
+
+  </ul>
+</div>
+<!-- /.navbar-collapse -->
+</div>
+</div> <!-- /.navbar -->

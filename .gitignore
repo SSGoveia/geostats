@@ -1,0 +1,8 @@
+*~
+._*
+*.lock
+*.swp
+*.out
+*.pyc
+output
+*.pid
