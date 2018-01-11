@@ -1,2 +1,0 @@
-# geostats
-Publicações
