@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Pelican-Blue
 
 Responsive theme for [Pelican](http://blog.getpelican.com/) Static Site Generator, Powered by [Python](https://www.python.org/) Programming language.
@@ -108,3 +109,7 @@ For more information on publishing your site, read the publishing [docs](http://
 ## Contributing
 
 Your contributions are welcome to improve the `pelican-blue` theme.
+=======
+# geostats
+Publicações
+>>>>>>> fa9fe5e0971d202cd17780ce3a5c83d6511a7788
