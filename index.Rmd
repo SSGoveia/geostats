@@ -4,7 +4,10 @@ output:
   html_document
 ---
 ```{r}
-library(lawn)
+library(plotly)
 
-lawn_sample(lawn_data$points_average, 2) %>% view()
+g <- ggplot(faithful, aes(x = eruptions, y = waiting)) +
+  stat_density_2d(aes(fill = ..level..), geom = "polygon") + 
+  xlim(1, 6) + ylim(40, 100)
+ggplotly(g)
 ```
