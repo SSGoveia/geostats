@@ -1,9 +1,9 @@
 ---
-title: "Plotly"
+title: "GeoStats"
 output_dir: docs
 ---
 
-# Plotly - graficos interativos
+# Gráficos interativos
 
 ```{r}
 library(plotly)
