@@ -12,5 +12,3 @@ navbar:
   right:
     - icon: fa-question fa-lg
       href: https://example.com
-runtime: shiny
-output_dir: docs
